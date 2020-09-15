@@ -20,7 +20,7 @@ TEST_CASE("raise error and warning when tempreature is lower than alert level")
 }
 TEST_CASE("raise error and warning when humidity is greater than alert level")
 {
-    REQUIRE(check.checkforhighvalues(93,humidity,90,70)===("ALERT!! humidity is very high"));
+    REQUIRE(check.checkforhighvalues(93,humidity,90,70)==("ALERT!! humidity is very high"));
     REQUIRE(check.checkforhighvalues(73,humidity,90,70)==("ALERT!! humidity is high"));
 }
 TEST_CASE("Do nothing when tempreature is in normal conditions")
