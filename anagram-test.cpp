@@ -2,7 +2,7 @@
 
 #include<bits/stdc++.h>
 #include "catch.hpp"
-#include "receiver.h"
+#include "anagram.h"
 using namespace std;
 
 CheckValues check;
