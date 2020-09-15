@@ -1,4 +1,4 @@
-#define CATCH_CONFIG_MAIN
+#define CATCH_CONFIG_RUNNER
 
 #include<bits/stdc++.h>
 #include "catch.hpp"
@@ -32,4 +32,25 @@ TEST_CASE("Do nothing when humidity is in normal conditions")
 {
     REQUIRE(check.CheckValuesForAlert(7,humidity,90,70,0,0)=="");
     REQUIRE(check.CheckValuesForAlert(34,humidity,90,70,0,0)=="");
+}
+void extractValuesFromStringAndSendValuesForChecking(string line) 
+{ 
+    stringstream ss(line); 
+        while(ss.good())
+        {
+         	string tempreaturestring,humiditystring;
+         	getline(ss,tempreaturestring,' ');
+         	getline(ss,humiditystring,'\n');
+         	CheckForWarningAndAlert obj(stof(tempreaturestring),stof(humiditystring));
+        } 
+}
+int main()
+{    
+    
+          string line="";
+    while(getline(cin,line))
+    {   
+        extractValuesFromStringAndSendValuesForChecking(line);
+    }
+    return 0;
 }
